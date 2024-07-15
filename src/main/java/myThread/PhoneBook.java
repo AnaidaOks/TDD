@@ -35,4 +35,8 @@ public class PhoneBook {
 
         return addedInfo.entrySet().stream().filter(mp -> mp.getValue().equals(number)).map(Map.Entry::getKey).findFirst().orElse(null);
     }
+
+    public String findByName(String name) {
+        return null;
+    }
 }

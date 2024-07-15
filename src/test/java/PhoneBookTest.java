@@ -21,4 +21,11 @@ public class PhoneBookTest {
         String foundName = phoneBook.findByNumber("999");
         assertTrue(foundName != null, "Не найдено имя по заданному номеру!");
     }
+
+    @Test
+    public void testFindByName(){
+        testAdd();
+        String foundNumber = phoneBook.findByName("Test3");
+        assertTrue(foundNumber != null, "Не найден номер по заданному имени!");
+    }
 }
