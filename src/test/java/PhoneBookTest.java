@@ -17,6 +17,7 @@ public class PhoneBookTest {
 
     @Test
     public void testFindByNumber(){
+        testAdd();
         String foundName = phoneBook.findByNumber("999");
         assertTrue(foundName != null, "Не найдено имя по заданному номеру!");
     }
