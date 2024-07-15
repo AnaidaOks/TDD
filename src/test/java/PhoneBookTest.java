@@ -4,11 +4,20 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class PhoneBookTest {
-    PhoneBook phoneBook;
+    PhoneBook phoneBook = PhoneBook.getInstance();
     @Test
     public void testAdd(){
 
-        int addedCount = phoneBook.getInstance().add("Test", "999");
+        int addedCount = phoneBook.add("Test", "999");
+        addedCount = phoneBook.add("Test2", "8907");
+        addedCount = phoneBook.add("Test3", "8996");
+        addedCount = phoneBook.add("Test", "789");
         assertTrue(addedCount > 0, "Неверное добавление в телефонную книжку!");
+    }
+
+    @Test
+    public void testFindByNumber(){
+        String foundName = phoneBook.findByNumber("999");
+        assertTrue(foundName != null, "Не найдено имя по заданному номеру!");
     }
 }

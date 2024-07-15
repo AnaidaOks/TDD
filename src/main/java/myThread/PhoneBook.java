@@ -28,4 +28,8 @@ public class PhoneBook {
         }
         return addedInfo.size();
     }
+
+    public String findByNumber(String number) {
+        return null;
+    }
 }
