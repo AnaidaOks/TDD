@@ -37,6 +37,6 @@ public class PhoneBook {
     }
 
     public String findByName(String name) {
-        return null;
+        return addedInfo.get(name);
     }
 }
