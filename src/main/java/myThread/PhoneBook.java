@@ -3,6 +3,7 @@ package myThread;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class PhoneBook {
 
@@ -27,7 +28,6 @@ public class PhoneBook {
         if (!addedInfo.containsKey(name)) {
             addedInfo.put(name, phone);
         }
-        addedInfo.entrySet().stream().sorted(Map.Entry.comparingByKey());
         return addedInfo.size();
     }
 
@@ -38,5 +38,10 @@ public class PhoneBook {
 
     public String findByName(String name) {
         return addedInfo.get(name);
+    }
+
+    public void printAllNames() {
+        Map<String, String> sortedNames = new TreeMap<>(addedInfo);
+        System.out.println("All names: " + sortedNames.keySet());
     }
 }
